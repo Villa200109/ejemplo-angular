@@ -1,0 +1,189 @@
+<div class="col-12 mt-2">
+  <div class="card">
+    <div class="card-header">
+      <div class="form-group row">
+        <div class="col-12" align="center">
+          <h1>Cinepolis</h1>
+        </div>
+        <div class="col-12">
+          <div class="form-group row">
+            <div class="col-5 border">
+              <div class="form-group row">
+                <div class="col-12 mt-2" align="center">
+                  <h2>Entradas</h2>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4 for="nombreCli">Nombre</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        [(ngModel)]="nombreCli"
+                        name="nombreCli"
+                        class="form-control form-control-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Cantidad Compradores</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        [(ngModel)]="cantCompra"
+                        name="cantCompra"
+                        class="form-control form-control-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Tarjeta Cineco</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <div class="form-group row">
+                        <div class="col-6 mt-1" align="center">
+                          <input
+                            type="radio"
+                            [(ngModel)]="tarCine"
+                            name="tarCine"
+                            value="si"
+                          />&nbsp; Si
+                        </div>
+                        <div class="col-6 mt-1" align="center">
+                          <input
+                            type="radio"
+                            [(ngModel)]="tarCine"
+                            name="tarCine"
+                            value="no"
+                          />
+                          &nbsp; No
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2" align="center">
+                    <div class="form-group row">
+                      <div class="col-6 mt-1" align="center">
+                        <h4>Cantidad De Boletas</h4>
+                      </div>
+                      <div class="col-6 mt-1" align="center">
+                        <input
+                          type="text"
+                          [(ngModel)]="cantBole"
+                          name="cantBole"
+                          class="form-control form-control-sm"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5 border">
+              <div class="form-group row">
+                <div class="col-12 mt-2" align="center">
+                  <h2>Salidas</h2>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Cliente:</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      {{ nombreCli }}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Total</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="{{ totalS }}"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Descuento</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="{{ desc }}"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Descuento Tarjeta Cineco</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="{{ descT }}"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-2" align="center">
+                  <div class="form-group row">
+                    <div class="col-6 mt-1" align="center">
+                      <h4>Valor a Pagar</h4>
+                    </div>
+                    <div class="col-6 mt-1" align="center">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        value="{{ resultadoF }}"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-3">
+                <h3 style="color: red;" align="center">
+                    {{aviso}}
+                </h3> 
+            </div>
+            <div class="col-12 mt-3">
+              <button (click)="procesar()" class="btn btn-primary w-100">
+                Procesar
+              </button>
+            </div>
+          </div>
+          <!-- <div class="col-6 mt-1" align="center">
+            cantidad boletas por personas: {{ cantBolePersona }}
+          </div>
+          <div class="col-6 mt-1" align="center">
+            Venta personal: {{ ventaP }}
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

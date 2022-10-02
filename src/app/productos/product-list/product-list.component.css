@@ -1,0 +1,13 @@
+thead{
+    color: grey;
+    /* background: rgb(0, 0, 140); */
+}
+
+.btn-primary{
+    background-color: blue;
+}
+
+.card-header{
+    background-color: blue;
+    color: white;
+}

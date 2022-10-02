@@ -1,0 +1,66 @@
+<div class="col-3"></div>
+<div class="col-12">
+  <div class="form-group row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+      <div class="form-group row">
+        <div class="col-6">
+          <a>Numero</a>
+        </div>
+        <div class="col-6">
+          <input
+            type="text"
+            [(ngModel)]="multi"
+            name="multi"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-12">
+        <button (click)="multiplicar()" class="btn btn-primary">
+          Calcular
+        </button>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-header">
+          <table class="table">
+            <thead class="">
+              <tr>
+                <td>Operacion</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let opera of opera">
+                <td>{{ opera }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-header">
+          <table class="table">
+            <thead class="">
+              <tr>
+                <td>Resultado</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let valores of valores">
+                <td>{{ valores }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div>resultado {{resultado}}</div> -->
